@@ -18,14 +18,9 @@ import model.entities.Departamento;
 public class Application {
     public static void main(String []args){
        
-    	DepartamentoDao depDao = DaoFactory.createDepartamentoDao();
-    	/*List<Departamento> lista = depDao.procurarTodos();
-    	for(Departamento dep:lista) {
-    		System.out.println(dep.toString());
-    	}*/
-    	Departamento dep = new Departamento(15,"Teste Atualizar");
-    	depDao.atualizar(dep);
-    	System.out.println(dep.toString());
+		Connection conn = null;
+		conn = DB.getConnection();
+		DB.closeConnection();
     }
     
 }
